@@ -1,0 +1,95 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.about{
+    height: 90%;
+    width: 100%;
+    border-radius: 0rem 30rem 30rem 0rem;
+    color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.about .nirdosh{
+    height: 100%;
+    width: 30%;
+    padding: 1rem;
+}
+.nirdosh img{
+    height: 100%;
+    width: 100%;
+}
+
+
+.desc,.desc1{
+   height: 100%;
+   width: 35%;
+    padding: 5rem;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    font: 900 .8rem 'Verdana' ;
+   
+}
+.seperator{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+input{
+    overflow-y: hidden;
+    height: 2rem;
+    width: 10rem;
+    border: 2px solid blueviolet;
+    border-radius: 6px;
+    text-align: center;
+   
+}
+p{
+    padding: 1rem;
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
+  @media  screen and (max-width:1024px) {
+    .about{
+        border-radius:0rem 10rem 10rem 0rem ;
+    }
+    .about .nirdosh{
+      width: 60%;
+    }
+    .desc,.desc1{
+        width:20%;
+    }
+    .seperator{
+        flex-direction: column;
+    }
+
+  }
+
+  @media  screen and (max-width:768px) {
+    .about{
+        border-radius: 0rem;
+        max-width: 100%;
+        overflow-x: hidden;
+        flex-direction: column;
+    }
+    .about .nirdosh{
+        height: 10%;
+        width:100%;
+    }
+    .nirdosh img{
+        height: 100%;
+        width: 50%;
+        padding-left: 20%;
+    }
+    .desc{
+        padding: .2rem;
+    }
+  
+    .seperator{
+        flex-direction: column;
+    }
+  }

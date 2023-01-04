@@ -1,0 +1,35 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(
+        RGB(3, 1, 140,1),
+        RGB(200,47,30,1)
+    );
+background-repeat: no-repeat;
+
+}
+
+button{
+    width:75px;
+    height: 30px;
+    margin: 10px 1px 0px 0px ;
+    border: 1px solid black;
+    border-radius:10px ;
+    background-color: #FFCFBA;
+}
+button img{
+    height: 100%;
+    width: 100%;
+}
+.scanner img{
+    height:350px;
+    width:350px;
+    border: 1px solid black;
+    border-radius:10px ;
+}

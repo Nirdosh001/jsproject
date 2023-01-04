@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <link rel="stylesheet" href="./khalti.css">
+    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
+</head>
+
+
+
+<body>
+
+    <h1>
+        Digital Payment Options:
+    </h1>
+
+    <!-- this is for esewa-integration in client-side -->
+  <div class="row">
+    <button  id="payment-button"><img src="./assets/logo1.png" alt="khalti"></button>
+    <form action="https://esewa.com.np/epay/main" method="POST">
+        <input value="1000" name="tAmt" type="hidden">
+        <input value="900" name="amt" type="hidden">
+        <input value="50" name="txAmt" type="hidden">
+        <input value="20" name="psc" type="hidden">
+        <input value="30" name="pdc" type="hidden">
+        <input value="ES-1912220090" name="scd" type="hidden">
+        <input value="1912220090" name="pid" type="hidden">
+        <input value="http://merchant.com.np/page/esewa_payment_success?q=su" type="hidden" name="su">
+        <input value="http://merchant.com.np/page/esewa_payment_failed?q=fu" type="hidden" name="fu">
+        <button type="submit"><img src="./assets/logo2.png" alt="esewa"></button>
+    </div>
+        <!-- //that`s it for esewa -->
+
+    <div class="scanner">
+        <h1>
+            Scan Me
+        </h1>
+        <img src="./assets/scan.jpg" alt="scan-me">
+   </div>
+  
+
+    <script>
+       if(confirm("Alert!\nPayment-Page is forcing to open on current Page!")==true){
+         
+       }else{
+         location.replace("http://127.0.0.1:5500/football.html");
+       }
+
+       
+
+    //    khalti-integration 
+    var config = {
+    "publicKey": "test_public_key_6816320a7b394e1d9149d7837f1d664b",
+    "productIdentity": "1234567890",
+    "productName": "Dragon",
+    "productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+    "paymentPreference": [
+        "KHALTI",
+        "EBANKING",
+        "MOBILE_BANKING",
+        "CONNECT_IPS",
+        "SCT",
+        ],
+    "eventHandler": {
+        onSuccess (payload) {
+           alert("Payment Success!")
+        },
+        onError (error) {
+            alert("Payment failed due to: "+error)
+        },
+        onClose () {
+            console.log('widget is closing');
+        }
+    }
+};
+
+var checkout = new KhaltiCheckout(config);
+var btn = document.getElementById("payment-button");
+btn.onclick = function () {
+    checkout.show({amount: 1000});
+}
+
+
+// now esewa js code
+var path="https://esewa.com.np/epay/main";
+var params= {
+    amt: 100,
+    psc: 0,
+    pdc: 0,
+    txAmt: 0,
+    tAmt: 100,
+    pid: "1912220090",
+    scd: "ES-1912220090",
+    su: "http://merchant.com.np/page/esewa_payment_success",
+    fu: "http://merchant.com.np/page/esewa_payment_failed"
+}
+
+function post(path, params) {
+    var form = document.createElement("form");
+    form.setAttribute("method", "POST");
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", key);
+        hiddenField.setAttribute("value", params[key]);
+        form.appendChild(hiddenField);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
+    </script>
+    <script src="./khalti.js"></script>
+</body>
+</html>
+
