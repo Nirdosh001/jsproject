@@ -36,34 +36,34 @@
 }
 
 .b1{
-    background-image: url(./assets/1.jpg); 
+    background-image: url(./1.jpg); 
 }
 .b2{
-    background-image: url(./assets/2.jpg); 
+    background-image: url(./2.jpg); 
 }
 .b3{
-    background-image: url(./assets/3.jpg); 
+    background-image: url(./3.jpg); 
 }
 .b4{
-    background-image: url(./assets/4.jpg); 
+    background-image: url(./4.jpg); 
 }
 .b5{
-    background-image: url(./assets/5.jpg); 
+    background-image: url(./5.jpg); 
 }
 .b6{
-    background-image: url(./assets/9.jpg); 
+    background-image: url(./9.jpg); 
 }
 .b7{
-    background-image: url(./assets/a.jpg); 
+    background-image: url(./a.jpg); 
 }
 .b8{
-    background-image: url(./assets/a1.jpeg); 
+    background-image: url(./a1.jpeg); 
 }
 .b9{
-    background-image: url(./assets/b.png); 
+    background-image: url(./b.png); 
 }
 .b10{
-    background-image: url(./assets/b1.jpg); 
+    background-image: url(./b1.jpg); 
 }
 body::-webkit-scrollbar {
     display: none;
